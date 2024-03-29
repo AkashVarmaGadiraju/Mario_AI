@@ -56,7 +56,7 @@ env = DummyVecEnv([lambda: env])
 env = VecFrameStack(env, 4, channels_order='last')
 
 # Load model
-model = PPO.load('./train/best_model_2000000')
+model = PPO.load('./train/best_model_800000')
 
 # Create a flag - restart or not
 done = True

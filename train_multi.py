@@ -52,7 +52,7 @@ class CustomRewardWrapper(Wrapper):
 
     def step(self, action):
         # Get the next state, reward, done, and info from the environment
-        data = self.env.step([action])
+        data = self.env.step(action)
         obs, reward, done, info = data
         custom_reward = 0
         if(done and info["life"] == 0):
@@ -160,7 +160,7 @@ if __name__ == '__main__':
     if(num_of_cpus == None):
         num_of_cpus = 4
     elif num_of_cpus > 4:
-        num_of_cpus = num_of_cpus - 2
+        num_of_cpus = 9
     
     env = SubprocVecEnv([make_env(i) for i in range(num_of_cpus)])
 
